@@ -134,7 +134,7 @@ var allGames = [];
             
           }
 
-Webflow.require('ix2').init();
+
          
         }
 
@@ -212,5 +212,5 @@ Webflow.require('ix2').init();
 
         }
 			$(document).ready(function(){
-      	updateDom();
+      	updateDom().done(Webflow.require('ix2').init(););
       });
