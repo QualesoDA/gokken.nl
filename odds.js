@@ -131,9 +131,9 @@ var allGames = [];
                     
                     '</div></div>');
             });
+            Webflow.require('ix2').init();
           }
 
-            Webflow.require('ix2').init();
 
          
         }
@@ -179,33 +179,33 @@ var allGames = [];
         function bookmakerImage(name){
             switch (name){
                 case 'williamhill':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e391b1df22157a13a62d_williamhill.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f40243d559d4697d0021_williamhill.png";
                 case 'unibet':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e390e973734493ea10be_unibet.png"
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f40207dd6e0b06e3229c_unibet.png"
                 case 'pinnacle':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38fe839f5342cbfaf1a_pinnacle.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f401f319022bd07b3710_pinnacle.png";
                 case 'mybookieag':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38e897f9f62f9916a2b_mybookieag.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f400121c524fa29e07e0_mybookie.png";
                 case 'matchbook':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38e9865d173abfff7a1_matchbook.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f4001dc42e269f39df7e_matchbook.png";
                 case 'marathonbet':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38ea332adbb7e9e0959_marathonbet.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f3ffd083d4b08690e350_marathonbet.png";
                 case 'intertops':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38d383fd642bfa3d58d_intertops.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f3fff6b78380bb306d78_intertops.png";
                 case 'bookmaker':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38dc19a89b71cff8ea0_bookmaker.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f3fe85aae63987c80d6c_bookmaker.png";
                 case 'betway':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38d290f4517b292f10c_betway.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f469bb3e00ac2e34da78_betway.png";
                 case 'betonlineag':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38cbc950c0b07f46755_betonlineag.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f3fd43d559416b7d0016_betonlineag.png";
                 case 'betclic':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0e38c51b4d93677366ac6_betclic.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f84450f482cf99e59ce9_betclic.png";
                 case 'sport888':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0bedfe47b4887e2b0ee24_sport888.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f848eb2abe1a3954a0db_sport888.png";
                 case 'onexbet':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0beded880376d1b7b23f9_onexbet.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f8477db0d3fa5726ae59_onexbet.png";
                 case 'betfair':
-                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0bede546b453eb03f05a5_betfair.png";
+                    return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f8457dfff831ebea525d_betfair.png";
                 
 
             }
