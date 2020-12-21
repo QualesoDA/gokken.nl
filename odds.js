@@ -131,10 +131,10 @@ var allGames = [];
                     
                     '</div></div>');
             });
-            Webflow.require('ix2').init();
+            
           }
 
-
+Webflow.require('ix2').init();
          
         }
 
