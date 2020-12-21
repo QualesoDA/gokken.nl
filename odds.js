@@ -68,9 +68,12 @@ var allGames = [];
         
        function checkAllFinished(){
           var totalSumFinished = finished.reduce((a, b) => a + b, 0);
+          var counter = 0;
 
           if(totalSumFinished == 6){
              allGames.forEach(function(obj){
+                counter += 1;
+
                 var club1 = obj.teams[0];
                 var club2 = obj.teams[1];
                 var time = obj.commence_time;
@@ -131,7 +134,10 @@ var allGames = [];
                     
                     '</div></div>');
             });
-            
+
+            if(counter == allGames.length){
+                Webflow.require('ix2').init();
+            }
           }
 
 
@@ -213,5 +219,4 @@ var allGames = [];
         }
 			$(document).ready(function(){
       	updateDom();
-				Webflow.require('ix2').init()
       });
