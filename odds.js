@@ -136,8 +136,8 @@ var allGames = [];
             });
 
             if(counter == allGames.length){
-                Webflow.require('ix2').init();
                 pagination();
+                Webflow.require('ix2').init();
             }
           }
 
