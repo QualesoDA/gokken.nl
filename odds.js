@@ -212,5 +212,6 @@ var allGames = [];
 
         }
 			$(document).ready(function(){
-      	updateDom().done(Webflow.require('ix2').init());
+      	updateDom();
+				Webflow.require('ix2').init()
       });
