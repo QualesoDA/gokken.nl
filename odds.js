@@ -214,3 +214,4 @@ Webflow.require('ix2').init();
 			$(document).ready(function(){
       	updateDom();
       });
+
