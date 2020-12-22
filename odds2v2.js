@@ -71,19 +71,21 @@ var allGames = [];
             var apiKeys = ["39d2fa38b5709476f43ae20efecd7c7f", "2355edb526c369ce1830d092b8a7db5a", "33135690d08b87fe347a98136a690699", 
             "7a616e25e4df931f716655cded3b3217", "f4a7176a70518cf3fd44a29e863cf361"];
 
-            var apiKeyGood = "";
+            apiKeyGood = "";
             var i = 0;
 
             for(i=0; i<apiKeys.length; i++){
                 var xhr = new XMLHttpRequest();
-                xhr.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], true);
-
+                xhr.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], false);
+                var counter =i;
                 // Register the event handler
                 xhr.onload = function(){
-                    if(xhr.status != 400){
-                        apiKeyGood = apiKeys[i];
-                        console.log("THE GOOD API KEY IS: " + apiKeyGood);
-                        i=100;
+                    if(xhr.status == 200){
+                        apiKeyGood = apiKeys[counter];
+                        console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
+                        return i=100;
+                    } else {
+                        console.log("SAUS")
                     }
                 }
 
