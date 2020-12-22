@@ -10,8 +10,9 @@ var allGames = [];
             xhr.onload = function(){
                 if(xhr.status === 200){
                     data = JSON.parse(this.response);
-
+                    var counter =0;
                     data.data.forEach(function(obj){
+                        counter += 1;
                         var totalOdds = [];
                         obj.sites.forEach(function(obj2){
                             var sumOdds = obj2.odds.h2h.reduce(function(a, b){
@@ -29,9 +30,14 @@ var allGames = [];
                             return b.odds.totalOdds-a.odds.totalOdds;
                         });
 
-
                         allGames.push(obj);
                         console.log(allGames);
+                        if(counter == data.data.length){
+                            finished.push(1);
+                            checkAllFinished();
+                            console.log("FINISHED");
+                            console.log(finished);
+                        }
                     });
 
 
@@ -44,10 +50,7 @@ var allGames = [];
             
             xhr.onreadystatechange = function(){
             	if(xhr.readyState == 4){
-              	finished.push(1);
-								checkAllFinished();
-                console.log("FINISHED");
-                console.log(finished);
+              	
               }
             };
 
