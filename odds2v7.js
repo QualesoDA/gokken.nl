@@ -17,8 +17,11 @@ var allGames = [];
                         apiKeyGood = apiKeys[counter];
                         console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
                         return i=100;
+                        xhr9.abort();
                     } else {
-                        console.log("SAUS")
+                        console.log("SAUS");
+
+                        xhr9.abort();
                     }
                 }
 
@@ -166,12 +169,13 @@ var allGames = [];
                     +
                     
                     '</div></div>');
+                if(counter == allGames.length){
+                    Webflow.require('ix2').init();
+                    pagination();
+                }
             });
 
-            if(counter == allGames.length){
-                Webflow.require('ix2').init();
-                pagination();
-            }
+            
           }
 
 
