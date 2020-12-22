@@ -84,9 +84,11 @@ var allGames = [];
             return apiKeyGood;
         }
 
+
+        var apiKeyGood = apiKey();
+
         function updateDom (){
 
-            var apiKeyGood = apiKey();
             doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
             doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_france_ligue_one&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f'+apiKeyGood);
             doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_germany_bundesliga&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f'+apiKeyGood);
