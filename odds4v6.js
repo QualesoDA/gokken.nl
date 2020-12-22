@@ -81,7 +81,7 @@ var allGames = [];
                 var club2 = obj.teams[1];
                 var time = obj.commence_time;
                 var bestBookmaker = obj.sites[0].site_key;
-                var bestBookmaker2 = obj.sites[1].site_key;
+                var bestBookmaker2 = ''; //obj.sites[1].site_key;
                 var bestBookmaker3 = ''; //obj.sites[2].site_key;
                 var bestOdds = obj.sites[0].odds.h2h;
 
