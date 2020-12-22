@@ -1,6 +1,35 @@
 var allGames = [];
         var finished = [];
-       
+        function apiKey(){
+            var apiKeys = ["39d2fa38b5709476f43ae20efecd7c7f", "2355edb526c369ce1830d092b8a7db5a", "33135690d08b87fe347a98136a690699", 
+            "7a616e25e4df931f716655cded3b3217", "f4a7176a70518cf3fd44a29e863cf361"];
+
+            apiKeyGood = "";
+            var i = 0;
+
+            for(i=0; i<apiKeys.length; i++){
+                var xhr9 = new XMLHttpRequest();
+                xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], false);
+                var counter =i;
+                // Register the event handler
+                xhr9.onload = function(){
+                    if(xhr9.status == 200){
+                        apiKeyGood = apiKeys[counter];
+                        console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
+                        return i=100;
+                    } else {
+                        console.log("SAUS")
+                    }
+                }
+
+                xhr9.send();
+            }
+
+            return apiKeyGood;
+        }
+
+
+        var apiKeyGood = apiKey();
         
         function doAjaxRequest(method, url, data){
             var xhr = new XMLHttpRequest();
@@ -56,36 +85,7 @@ var allGames = [];
             xhr.send(data);
         }
         
-        function apiKey(){
-            var apiKeys = ["39d2fa38b5709476f43ae20efecd7c7f", "2355edb526c369ce1830d092b8a7db5a", "33135690d08b87fe347a98136a690699", 
-            "7a616e25e4df931f716655cded3b3217", "f4a7176a70518cf3fd44a29e863cf361"];
-
-            apiKeyGood = "";
-            var i = 0;
-
-            for(i=0; i<apiKeys.length; i++){
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], false);
-                var counter =i;
-                // Register the event handler
-                xhr.onload = function(){
-                    if(xhr.status == 200){
-                        apiKeyGood = apiKeys[counter];
-                        console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
-                        return i=100;
-                    } else {
-                        console.log("SAUS")
-                    }
-                }
-
-                xhr.send();
-            }
-
-            return apiKeyGood;
-        }
-
-
-        var apiKeyGood = apiKey();
+        
 
         function updateDom (){
 
