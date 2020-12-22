@@ -1,6 +1,6 @@
-
-        var allGames = [];
+var allGames = [];
         var finished = [];
+       
         
         function doAjaxRequest(method, url, data){
             var xhr = new XMLHttpRequest();
@@ -55,38 +55,31 @@
 
             xhr.send(data);
         }
-        
-        
 
         function updateDom (){
-
-            var apiKeyGood = "33135690d08b87fe347a98136a690699";
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_france_ligue_one&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_germany_bundesliga&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_spain_la_liga&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_champs_league&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_europa_league&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f');
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_france_ligue_one&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f');
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_germany_bundesliga&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f');
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_spain_la_liga&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f');
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_champs_league&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f');
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_europa_league&region=eu&mkt=h2h&dateFormat=iso&apiKey=39d2fa38b5709476f43ae20efecd7c7f');
+           
         }
-
-        
         
        function checkAllFinished(){
           var totalSumFinished = finished.reduce((a, b) => a + b, 0);
           var counter = 0;
 
-          if(finished.length == 6){
+          if(totalSumFinished == 6){
              allGames.forEach(function(obj){
                 counter += 1;
-                console.log(counter);
-                console.log(allGames.length);
 
                 var club1 = obj.teams[0];
                 var club2 = obj.teams[1];
                 var time = obj.commence_time;
                 var bestBookmaker = obj.sites[0].site_key;
                 var bestBookmaker2 = obj.sites[1].site_key;
-                var bestBookmaker3 = ""; //obj.sites[2].site_key;
+                var bestBookmaker3 = obj.sites[2].site_key;
                 var bestOdds = obj.sites[0].odds.h2h;
 
                $("#weddenschappen").append('<li class="wedstrijd-list-item opened w-clearfix"><div class="div-block-10"><a href="' 
@@ -140,16 +133,12 @@
                     +
                     
                     '</div></div>');
-
-                if(counter == allGames.length){
-                    Webflow.require('ix2').init();
-                    console.log("PAGINATION!!!!!!");
-                    pagination();
-                }
-
             });
 
-            
+            if(counter == allGames.length){
+                pagination();
+                Webflow.require('ix2').init();
+            }
           }
 
 
