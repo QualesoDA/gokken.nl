@@ -75,7 +75,7 @@
           var totalSumFinished = finished.reduce((a, b) => a + b, 0);
           var counter = 0;
 
-          if(totalSumFinished == 6){
+          if(finished.length == 6){
              allGames.forEach(function(obj){
                 counter += 1;
                 console.log(counter);
