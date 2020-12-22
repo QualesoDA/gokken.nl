@@ -106,6 +106,8 @@ var allGames = [];
           if(totalSumFinished == 6){
              allGames.forEach(function(obj){
                 counter += 1;
+                console.log(counter);
+                console.log(allGames.length);
 
                 var club1 = obj.teams[0];
                 var club2 = obj.teams[1];
@@ -166,12 +168,13 @@ var allGames = [];
                     +
                     
                     '</div></div>');
-                    
+
                 if(counter == allGames.length){
                     Webflow.require('ix2').init();
                     console.log("PAGINATION!!!!!!");
                     pagination();
                 }
+
             });
 
             
