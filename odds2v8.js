@@ -17,17 +17,14 @@ var allGames = [];
                         apiKeyGood = apiKeys[counter];
                         console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
                         return i=100;
-                        xhr9.abort();
                     } else {
                         console.log("SAUS");
-
-                        xhr9.abort();
                     }
                 }
 
                 xhr9.send();
             }
-
+            xhr9.abort();
             return apiKeyGood;
         }
 
