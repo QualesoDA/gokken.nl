@@ -1,5 +1,4 @@
-var allGames = [];
-        var finished = [];
+
         function apiKey(){
             var apiKeys = ["39d2fa38b5709476f43ae20efecd7c7f", "2355edb526c369ce1830d092b8a7db5a", "33135690d08b87fe347a98136a690699", 
             "7a616e25e4df931f716655cded3b3217", "f4a7176a70518cf3fd44a29e863cf361"];
@@ -30,6 +29,8 @@ var allGames = [];
 
 
         var apiKeyGood = apiKey();
+        var allGames = [];
+        var finished = [];
         
         function doAjaxRequest(method, url, data){
             var xhr = new XMLHttpRequest();
