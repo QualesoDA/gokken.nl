@@ -166,8 +166,10 @@ var allGames = [];
                     +
                     
                     '</div></div>');
+                    
                 if(counter == allGames.length){
                     Webflow.require('ix2').init();
+                    console.log("PAGINATION!!!!!!");
                     pagination();
                 }
             });
