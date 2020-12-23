@@ -117,7 +117,7 @@ var allGames = [];
                 +
                 bestOdds[1]
                 +
-                '</div></div></div></div><div class="wedstrijden-content horizontal"><div class="wedstrijd-column"><div class="caption">1</div><div class="wedstrijd-button no-bg"><img src="'
+                '</div></div></div></div><div class="wedstrijden-content horizontal mobile-hidden"><div class="wedstrijd-column"><div class="caption">1</div><div class="wedstrijd-button no-bg"><img src="'
                 
                 +
                 bookmakerImage(bestBookmaker)
