@@ -130,7 +130,7 @@ var allGames = [];
                 +
                 bookmakerImage(bestBookmaker3)
                 +
-                '" loading="lazy" alt="" class="top-casino-logo-image small nm"></div></div></div><div data-w-id="a94cb014-6e8c-c0ea-75df-63ed9a593538" class="wedstrijd-star" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div></div><div style="display: none; width: 975px; height: 0px;" class="wedstrijd-uitklappen"><div class="div-block-11 w-clearfix">'
+                '" loading="lazy" alt="" class="top-casino-logo-image small nm"></div></div></div><div data-w-id="a94cb014-6e8c-c0ea-75df-63ed9a593538" class="wedstrijd-star" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div></div><div style="display: none; height: 0px;" class="wedstrijd-uitklappen"><div class="div-block-11 w-clearfix">'
                     +
                         uitklapWedstrijd(obj)
                     +
