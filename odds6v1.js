@@ -79,7 +79,23 @@ var allGames = [];
 
                 var club1 = obj.teams[0];
                 var club2 = obj.teams[1];
-                var time = obj.commence_time;
+                var date = new Date(obj.commence_time);
+
+                year = date.getFullYear();
+                month = date.getMonth()+1;
+                dt = date.getDate();
+
+                hours = date.getHours();
+                minutes = date.getMinutes();
+
+                if (dt < 10) {
+                dt = '0' + dt;
+                }
+                if (month < 10) {
+                month = '0' + month;
+                }
+
+                time = year+'-' + month + '-'+dt + " om " + hours + ":" + minutes;
                 var bestBookmaker = obj.sites[0].site_key;
                 var bestBookmaker2 = (typeof obj.sites[1] === 'undefined') ? "" : obj.sites[1].site_key;
                 var bestBookmaker3 = (typeof obj.sites[2] === 'undefined') ? "" : obj.sites[2].site_key;
@@ -184,7 +200,36 @@ var allGames = [];
         }
 
         function domainName (name) {
-
+            switch (name){
+                case 'williamhill':
+                    return "https://www.williamhill.com/";
+                case 'unibet':
+                    return "https://www.unibet.eu/"
+                case 'pinnacle':
+                    return "https://www.pinnacle.com/";
+                case 'mybookieag':
+                    return "https://mybookie.ag/";
+                case 'matchbook':
+                    return "https://www.matchbook.com";
+                case 'marathonbet':
+                    return "https://www.marathonbet.com";
+                case 'intertops':
+                    return "https://intertops.eu";
+                case 'bookmaker':
+                    return "https://www.bookmaker.eu";
+                case 'betway':
+                    return "https://betway.com";
+                case 'betonlineag':
+                    return "https://www.betonline.ag";
+                case 'betclic':
+                    return "https://www.betclic.com";
+                case 'sport888':
+                    return "https://www.888sport.com/#/home";
+                case 'onexbet':
+                    return "https://1xbet.com/";
+                case 'betfair':
+                    return "https://www.betfair.com";
+            }
         }
         function bookmakerImage(name){
             switch (name){
