@@ -60,12 +60,12 @@ var allGames = [];
         }
 
         function updateDom (){
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey=33135690d08b87fe347a98136a690699');
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_france_ligue_one&region=eu&mkt=h2h&dateFormat=iso&apiKey=33135690d08b87fe347a98136a690699');
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_germany_bundesliga&region=eu&mkt=h2h&dateFormat=iso&apiKey=33135690d08b87fe347a98136a690699');
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_spain_la_liga&region=eu&mkt=h2h&dateFormat=iso&apiKey=33135690d08b87fe347a98136a690699');
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_champs_league&region=eu&mkt=h2h&dateFormat=iso&apiKey=33135690d08b87fe347a98136a690699');
-            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_europa_league&region=eu&mkt=h2h&dateFormat=iso&apiKey=33135690d08b87fe347a98136a690699');
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_france_ligue_one&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_germany_bundesliga&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_spain_la_liga&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_champs_league&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
+            doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_uefa_europa_league&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
            
         }
         
@@ -94,8 +94,11 @@ var allGames = [];
                 if (month < 10) {
                 month = '0' + month;
                 }
+                if(minutes < 10){
+                minutes = '0' + minutes;
+                }
 
-                time = year+'-' + month + '-'+dt + " om " + hours + ":" + minutes;
+                time = dt+'-' + month + '-'+year + " om " + hours + ":" + minutes;
                 var bestBookmaker = obj.sites[0].site_key;
                 var bestBookmaker2 = (typeof obj.sites[1] === 'undefined') ? "" : obj.sites[1].site_key;
                 var bestBookmaker3 = (typeof obj.sites[2] === 'undefined') ? "" : obj.sites[2].site_key;
@@ -266,6 +269,44 @@ var allGames = [];
             }
 
         }
+
+
+
+        function apiKey(){
+            var apiKeys = ["39d2fa38b5709476f43ae20efecd7c7f", "2355edb526c369ce1830d092b8a7db5a", "33135690d08b87fe347a98136a690699", 
+            "7a616e25e4df931f716655cded3b3217", "f4a7176a70518cf3fd44a29e863cf361"];
+
+            apiKeyGood = "";
+            var i = 0;
+
+            for(i=0; i<apiKeys.length; i++){
+                var xhr9 = new XMLHttpRequest();
+                xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], false);
+                var counter =i;
+                // Register the event handler
+                xhr9.onload = function(){
+                    if(xhr9.status == 200){
+                        apiKeyGood = apiKeys[counter];
+                        console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
+                        return i=100;
+                    } else {
+                        console.log("SAUS");
+                    }
+                }
+
+                if(i==100){
+                    updateDom(apiKeyGood);
+                }
+
+                xhr9.send();
+            }
+            xhr9.abort();
+            return apiKeyGood;
+        }
+
+
 			$(document).ready(function(){
-      	updateDom();
+            
+            apiKey();
+      	
       });
