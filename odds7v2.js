@@ -39,11 +39,7 @@ var allGames = [];
                             console.log(finished);
                         }
                     });
-
-
-                    allGames.sort(function(a, b) {
-                    return new Date(a.commence_time) - new Date(b.commence_time);
-                    });
+                    
                 } else {
                 }
             }; 
@@ -74,6 +70,10 @@ var allGames = [];
           var counter = 0;
 
           if(totalSumFinished == 6){
+            allGames.sort(function(a, b) {
+                return new Date(a.commence_time) - new Date(b.commence_time);
+                });
+
              allGames.forEach(function(obj){
                 counter += 1;
 
