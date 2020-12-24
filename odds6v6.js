@@ -281,7 +281,7 @@ var allGames = [];
 
             for(i=0; i<apiKeys.length; i++){
                 var xhr9 = new XMLHttpRequest();
-                xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], false);
+                xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], true);
                 var counter =i;
 
                 // Register the event handler
@@ -289,6 +289,7 @@ var allGames = [];
                     if(xhr9.status == 200){
                         apiKeyGood = apiKeys[counter];
                         console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
+                        updateDom(apiKeyGood);
                         return i=100;
                     } else {
                         console.log("SAUS");
@@ -296,7 +297,7 @@ var allGames = [];
                 }
 
                 if(apiKeyGood){
-                    updateDom(apiKeyGood);
+                    
                 }
 
                 xhr9.send();
