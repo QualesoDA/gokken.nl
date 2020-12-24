@@ -289,15 +289,13 @@ var allGames = [];
                     if(xhr9.status == 200){
                         apiKeyGood = apiKeys[counter];
                         console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
-                        updateDom(apiKeyGood);
+                        if(apiKeyGood){
+                            updateDom(apiKeyGood);
+                        }
                         return i=100;
                     } else {
                         console.log("SAUS");
                     }
-                }
-
-                if(apiKeyGood){
-                    
                 }
 
                 xhr9.send();
