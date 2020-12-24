@@ -59,7 +59,7 @@ var allGames = [];
             xhr.send(data);
         }
 
-        function updateDom (){
+        function updateDom (apiKeyGood){
             doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
             doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_france_ligue_one&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
             doAjaxRequest('get', 'https://api.the-odds-api.com/v3/odds/?sport=soccer_germany_bundesliga&region=eu&mkt=h2h&dateFormat=iso&apiKey='+apiKeyGood);
@@ -272,41 +272,36 @@ var allGames = [];
 
 
 
-        function apiKey(){
+        function apiKey(counterNum){
             var apiKeys = ["39d2fa38b5709476f43ae20efecd7c7f", "2355edb526c369ce1830d092b8a7db5a", "33135690d08b87fe347a98136a690699", 
             "7a616e25e4df931f716655cded3b3217", "f4a7176a70518cf3fd44a29e863cf361"];
-
+            var counter = counterNum;
             apiKeyGood = "";
-            var i = 0;
 
-            for(i=0; i<apiKeys.length; i++){
-                var xhr9 = new XMLHttpRequest();
-                xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], true);
-                var counter =i;
+            var xhr9 = new XMLHttpRequest();
+            xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[counter], true);
 
-                // Register the event handler
-                xhr9.onload = function(){
+            // Register the event handler
+            xhr9.onreadystatechange = function(){
+                if(xhr9.readyState == 4){
+                    apiKeyGood = apiKeys[counter];
+                    
                     if(xhr9.status == 200){
-                        apiKeyGood = apiKeys[counter];
                         console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
-                        if(apiKeyGood){
-                            updateDom(apiKeyGood);
-                        }
-                        return i=100;
+                        updateDom(apiKeyGood);
                     } else {
                         console.log("SAUS");
+                        counter += 1;
+                        apiKey(counter);
                     }
                 }
-
-                xhr9.send();
             }
-            xhr9.abort();
-            return apiKeyGood;
+            xhr9.send();
         }
 
 
 			$(document).ready(function(){
             
-            apiKey();
+            apiKey(0);
       	
       });
