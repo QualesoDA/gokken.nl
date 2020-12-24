@@ -281,30 +281,28 @@ var allGames = [];
 
             for(i=0; i<apiKeys.length; i++){
                 var xhr9 = new XMLHttpRequest();
-                i=i;
-                xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], true);
+                xhr9.open("GET", "https://api.the-odds-api.com/v3/odds/?sport=soccer_epl&region=eu&mkt=h2h&dateFormat=iso&apiKey="+apiKeys[i], false);
                 var counter =i;
+
                 // Register the event handler
                 xhr9.onload = function(){
                     if(xhr9.status == 200){
                         apiKeyGood = apiKeys[counter];
                         console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
-                        return 100;
+                        return i=100;
                     } else {
                         console.log("SAUS");
-                        return counter;
                     }
                 }
-                i = xhr9.onload;
 
-                if(i==100){
+                if(apiKeyGood){
                     updateDom(apiKeyGood);
-                    console.log("START DOM UPDATE");
                 }
 
                 xhr9.send();
             }
             xhr9.abort();
+            return apiKeyGood;
         }
 
 
