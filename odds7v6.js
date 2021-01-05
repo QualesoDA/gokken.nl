@@ -31,12 +31,9 @@ var allGames = [];
                         });
 
                         allGames.push(obj);
-                        console.log(allGames);
                         if(counter == data.data.length){
                             finished.push(1);
                             checkAllFinished();
-                            console.log("FINISHED");
-                            console.log(finished);
                         }
                     });
                     
@@ -293,10 +290,8 @@ var allGames = [];
                     apiKeyGood = apiKeys[counter];
                     
                     if(xhr9.status == 200){
-                        console.log("THE GOOD API KEY IS: " + apiKeys[counter]);
                         updateDom(apiKeyGood);
                     } else {
-                        console.log("SAUS");
                         counter += 1;
                         apiKey(counter);
                     }
