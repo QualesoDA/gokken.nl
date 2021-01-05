@@ -235,6 +235,8 @@ var allGames = [];
                     return "https://1xbet.com/";
                 case 'betfair':
                     return "https://www.betfair.com";
+                default:
+                    return "";
             }
         }
         function bookmakerImage(name){
@@ -267,7 +269,8 @@ var allGames = [];
                     return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f8477db0d3fa5726ae59_onexbet.png";
                 case 'betfair':
                     return "https://uploads-ssl.webflow.com/5fc79081fe2899ba138f9765/5fe0f8457dfff831ebea525d_betfair.png";
-                
+                default:
+                    return "";
 
             }
 
