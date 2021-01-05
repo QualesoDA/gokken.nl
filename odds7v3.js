@@ -71,7 +71,7 @@ var allGames = [];
 
           if(totalSumFinished == 6){
 
-            $(".loading-wedstrijden").hide();
+            $(".loading-wedstrijden").parent().hide();
 
             allGames.sort(function(a, b) {
                 return new Date(a.commence_time) - new Date(b.commence_time);
