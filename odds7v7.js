@@ -99,7 +99,7 @@ var allGames = [];
                 }
 
                 time = dt+'-' + month + '-'+year + " om " + hours + ":" + minutes;
-                var bestBookmaker = obj.sites[0].site_key;
+                var bestBookmaker = (typeof obj.sites[0] === 'undefined') ? "" : obj.sites[0].site_key;
                 var bestBookmaker2 = (typeof obj.sites[1] === 'undefined') ? "" : obj.sites[1].site_key;
                 var bestBookmaker3 = (typeof obj.sites[2] === 'undefined') ? "" : obj.sites[2].site_key;
                 var bestOdds = obj.sites[0].odds.h2h;
