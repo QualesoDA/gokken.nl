@@ -102,7 +102,7 @@ var allGames = [];
                 var bestBookmaker = (typeof obj.sites[0] === 'undefined') ? "" : obj.sites[0].site_key;
                 var bestBookmaker2 = (typeof obj.sites[1] === 'undefined') ? "" : obj.sites[1].site_key;
                 var bestBookmaker3 = (typeof obj.sites[2] === 'undefined') ? "" : obj.sites[2].site_key;
-                var bestOdds = (typeof obj.sites[0].odds.h2h === 'undefined') ? "" : obj.sites[0].odds.h2h;
+                var bestOdds = (typeof obj.sites[0] === 'undefined') ? "" : obj.sites[0].odds.h2h;
 
                $("#weddenschappen").append('<li class="wedstrijd-list-item opened w-clearfix"><div class="div-block-10"><a href="' 
                 +
