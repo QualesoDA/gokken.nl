@@ -217,7 +217,7 @@ var allGames = [];
                 case 'marathonbet':
                     return "https://www.marathonbet.com";
                 case 'intertops':
-                    return "https://intertops.eu";
+                    return "https://link.intertops.eu/c/409048";
                 case 'bookmaker':
                     return "https://www.bookmaker.eu";
                 case 'betway':
