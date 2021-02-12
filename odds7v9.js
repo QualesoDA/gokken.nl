@@ -223,7 +223,7 @@ var allGames = [];
                 case 'betway':
                     return "https://betway.com";
                 case 'betonlineag':
-                    return "https://www.betonline.ag";
+                    return "https://record.commissionkings.ag/_1sfoe6Y5W4VgZImVJCQ71GNd7ZgqdRLk/1/";
                 case 'betclic':
                     return "https://www.betclic.com";
                 case 'sport888':
