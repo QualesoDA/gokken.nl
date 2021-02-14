@@ -205,33 +205,33 @@ var allGames = [];
         function domainName (name) {
             switch (name){
                 case 'williamhill':
-                    return "https://www.williamhill.com/";
+                    return "#";
                 case 'unibet':
-                    return "https://www.unibet.eu/"
+                    return "#"
                 case 'pinnacle':
-                    return "https://www.pinnacle.com/";
+                    return "#";
                 case 'mybookieag':
-                    return "https://mybookie.ag/";
+                    return "#";
                 case 'matchbook':
-                    return "https://www.matchbook.com";
+                    return "#";
                 case 'marathonbet':
-                    return "https://www.marathonbet.com";
+                    return "#";
                 case 'intertops':
-                    return "https://link.intertops.eu/c/409048";
+                    return "#";
                 case 'bookmaker':
-                    return "https://www.bookmaker.eu";
+                    return "#";
                 case 'betway':
-                    return "https://betway.com";
+                    return "#";
                 case 'betonlineag':
-                    return "https://record.commissionkings.ag/_1sfoe6Y5W4VgZImVJCQ71GNd7ZgqdRLk/1/";
+                    return "#";
                 case 'betclic':
-                    return "https://www.betclic.com";
+                    return "#";
                 case 'sport888':
-                    return "https://www.888sport.com/#/home";
+                    return "#";
                 case 'onexbet':
-                    return "https://1xbet.com/";
+                    return "#";
                 case 'betfair':
-                    return "https://www.betfair.com";
+                    return "#";
                 default:
                     return "";
             }
